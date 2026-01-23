@@ -3,75 +3,91 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- SEO Meta Tags -->
-    <title>Enis Begu | Software Programmer Portfolio</title>
-    <meta name="description" content="Enis Begu is a 16-year-old software programmer and web developer. Creator of galdimi.com and other web projects.">
+    <!-- SEO -->
+    <title>Enis Begu | Software Programmer & Web Developer</title>
+    <meta name="description" content="Enis Begu is a young software programmer and web developer. Creator of galdimi.com. View portfolio, skills, and projects.">
     <meta name="keywords" content="Enis Begu, software programmer, web developer, portfolio, galdimi, HTML, CSS, JavaScript">
     <meta name="author" content="Enis Begu">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        :root {
+            --bg: #f8fafc;
+            --primary: #1e293b;
+            --secondary: #475569;
+            --accent: #2563eb;
+            --card: #ffffff;
+            --border: #e2e8f0;
+        }
+
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #0f172a;
-            color: #e5e7eb;
+            background-color: var(--bg);
+            color: var(--primary);
             line-height: 1.6;
         }
 
         header {
-            background-color: #020617;
+            background-color: var(--card);
+            border-bottom: 1px solid var(--border);
             padding: 60px 20px;
             text-align: center;
         }
 
         header h1 {
-            margin: 0;
+            margin: 15px 0 5px;
             font-size: 40px;
-            color: #38bdf8;
         }
 
         header p {
+            color: var(--secondary);
             font-size: 18px;
-            margin-top: 10px;
-            color: #cbd5f5;
+            margin: 0;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
         }
 
         main {
             max-width: 900px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         h2 {
-            color: #38bdf8;
-            border-bottom: 2px solid #38bdf8;
-            padding-bottom: 6px;
+            font-size: 24px;
             margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
         }
 
         .card {
-            background-color: #020617;
+            background-color: var(--card);
             padding: 25px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            border: 1px solid var(--border);
         }
 
         ul {
-            list-style: none;
-            padding: 0;
+            padding-left: 20px;
         }
 
         ul li {
-            padding: 8px 0;
+            margin-bottom: 8px;
         }
 
         a {
-            color: #38bdf8;
+            color: var(--accent);
             text-decoration: none;
         }
 
@@ -81,10 +97,11 @@
 
         footer {
             text-align: center;
-            padding: 25px;
-            background-color: #020617;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            background-color: var(--card);
+            color: var(--secondary);
             font-size: 14px;
-            color: #94a3b8;
         }
     </style>
 </head>
@@ -92,6 +109,13 @@
 <body>
 
 <header>
+    <!-- PHOTO LINK (replace with your own image URL if you want) -->
+    <img 
+        src="C:\Users\Nxenesit\Downloads\IMG_0597.jpeg" 
+        alt="Photo of Enis Begu" 
+        class="profile-photo"
+    >
+
     <h1>Enis Begu</h1>
     <p>Software Programmer & Web Developer</p>
 </header>
@@ -102,9 +126,9 @@
         <h2>About Me</h2>
         <div class="card">
             <p>
-                My name is <strong>Enis Begu</strong>, a 16-year-old software programmer with a strong interest
-                in web development and modern technologies. I focus on writing clean, efficient code
-                and continuously improving my skills through real-world projects.
+                My name is <strong>Enis Begu</strong>. I am a 16-year-old software programmer with a strong
+                interest in web development and modern technologies. I enjoy building real-world
+                projects, writing clean code, and continuously improving my skills.
             </p>
         </div>
     </section>
@@ -114,10 +138,10 @@
         <div class="card">
             <ul>
                 <li>HTML5 – Semantic and accessible markup</li>
-                <li>CSS3 – Responsive design and modern layouts</li>
+                <li>CSS3 – Responsive layouts and modern styling</li>
                 <li>JavaScript – Basics and DOM manipulation</li>
                 <li>Git & GitHub – Version control</li>
-                <li>WordPress</li>
+                <li>Problem solving and logical thinking</li>
             </ul>
         </div>
     </section>
@@ -128,9 +152,9 @@
         <div class="card">
             <p><strong>Galdimi.com</strong></p>
             <p>
-                A live website fully created and developed by me. This project demonstrates my ability
-                to build, deploy, and maintain a real-world web application with a focus on clean design
-                and performance.
+                A live website fully designed and developed by me. This project demonstrates my ability
+                to build, deploy, and maintain a real-world web application with a focus on clean design,
+                usability, and performance.
             </p>
             <p>
                 Website:
@@ -140,11 +164,13 @@
             </p>
         </div>
 
+        <br>
+
         <div class="card">
             <p><strong>Personal Portfolio Website</strong></p>
             <p>
-                A professional portfolio website built using HTML and CSS, hosted on GitHub Pages.
-                Designed to be fast, responsive, and search-engine friendly.
+                A professional portfolio website built using HTML and CSS, hosted on GitHub Pages and
+                optimized for search engines.
             </p>
         </div>
     </section>
@@ -153,7 +179,7 @@
         <h2>Contact</h2>
         <div class="card">
             <p>Email: <a href="mailto:beguenis@gmail.com">beguenis@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/enisbegu</a></p>
+            <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
         </div>
     </section>
 
@@ -165,3 +191,4 @@
 
 </body>
 </html>
+
