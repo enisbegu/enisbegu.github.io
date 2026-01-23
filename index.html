@@ -1,150 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Enis Begu | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Enis Begu | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+}
 
-        body {
-            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            animation: fadeIn 1.5s ease forwards;
-        }
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e5e7eb;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
 
-        .container {
-            background: rgba(0,0,0,0.5);
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 900px;
-            width: 95%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            animation: slideUp 1.2s ease forwards;
-        }
+.container {
+    background: #111827;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    width: 95%;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    animation: slideUp 1s ease;
+}
 
-        @keyframes slideUp {
-            from {
-                transform: translateY(40px);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
+@keyframes slideUp {
+    from { transform: translateY(40px); }
+    to { transform: translateY(0); }
+}
 
-        .photo {
-            flex: 1;
-            min-width: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.profile-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #3b82f6;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
-        .photo img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #00d4ff;
-        }
+.content h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
 
-        .content {
-            flex: 2;
-            min-width: 250px;
-        }
+.content h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #3b82f6;
+    margin-bottom: 20px;
+}
 
-        h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
+.content p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #cbd5f5;
+}
 
-        h2 {
-            font-size: 18px;
-            color: #00d4ff;
-            margin-bottom: 20px;
-        }
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
 
-        p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+.skill {
+    background: rgba(59,130,246,0.15);
+    color: #3b82f6;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+}
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px 0;
-        }
+.links a {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 10px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-        .skill {
-            background: #00d4ff;
-            color: black;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-        }
+.links a:hover {
+    text-decoration: underline;
+}
 
-        .links a {
-            display: inline-block;
-            margin-right: 15px;
-            margin-top: 10px;
-            color: #00d4ff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #9ca3af;
+}
 
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            margin-top: 20px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-    </style>
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+</style>
 </head>
 
 <body>
     <div class="container">
-        <div class="photo">
-            <!-- Replace profile.jpg with your own photo -->
-            <img src="profile.jpg" alt="Enis Begu">
-        </div>
+        <img src="profile.jpg" alt="Enis Begu" class="profile-img">
 
         <div class="content">
             <h1>Enis Begu</h1>
-            <h2>16-year-old Web Developer</h2>
+            <h2>Web Developer · 16 years old</h2>
 
             <p>
-                I’m a passionate young developer with experience in building real websites.
-                I created <strong>galdimi.com</strong> and I enjoy working on clean,
-                modern, and functional web projects.
+                I’m a young and motivated web developer with real-world experience.
+                I built <strong>galdimi.com</strong> and focus on creating clean,
+                modern, and functional websites.
             </p>
 
             <p>
-                I work with both front-end and CMS platforms and I’m always learning
-                new technologies to improve my skills.
+                I work with both custom code and CMS platforms and I’m constantly
+                improving my skills.
             </p>
 
             <div class="skills">
@@ -157,14 +146,5 @@
             <p><strong>Email:</strong> beguenis\2gmail.com</p>
 
             <div class="links">
-                <a href="https://galdimi.com" target="_blank">🌐 Galdimi.com</a>
-                <a href="https://github.com/" target="_blank">💻 GitHub</a>
-            </div>
-
-            <footer>
-                © 2026 Enis Begu
-            </footer>
-        </div>
-    </div>
-</body>
-</html>
+                <a href="https://galdimi.com" target="_blank">Galdimi.com</a>
+                <a hr
