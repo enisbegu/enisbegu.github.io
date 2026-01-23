@@ -7,144 +7,255 @@
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #020617, #0f172a);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #e5e7eb;
-    opacity: 0;
-    animation: fadeIn 1.2s ease forwards;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e5e7eb;
 }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
+/* GLOBAL */
+section {
+  padding: 80px 20px;
 }
 
 .container {
-    background: #111827;
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 900px;
-    width: 95%;
-    display: flex;
-    gap: 40px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-    animation: slideUp 1s ease;
+  max-width: 1100px;
+  margin: auto;
 }
 
-@keyframes slideUp {
-    from { transform: translateY(40px); }
-    to { transform: translateY(0); }
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-card {
+  background: #111827;
+  border-radius: 22px;
+  padding: 50px;
+  display: flex;
+  gap: 40px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .profile-img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #3b82f6;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3b82f6;
 }
 
-.content h1 {
-    font-size: 36px;
-    font-weight: 700;
+.hero h1 {
+  font-size: 38px;
 }
 
-.content h2 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #3b82f6;
-    margin-bottom: 20px;
+.hero h2 {
+  color: #3b82f6;
+  font-size: 18px;
+  margin: 10px 0 20px;
 }
 
-.content p {
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #cbd5f5;
+.hero p {
+  color: #cbd5f5;
+  line-height: 1.7;
 }
 
 .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .skill {
-    background: rgba(59,130,246,0.15);
-    color: #3b82f6;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(59,130,246,0.15);
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 14px;
 }
 
-.links a {
-    display: inline-block;
-    margin-right: 20px;
-    margin-top: 10px;
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: 600;
+/* SECTION TITLES */
+.section-title {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-.links a:hover {
-    text-decoration: underline;
+.section-sub {
+  color: #94a3b8;
+  margin-bottom: 40px;
 }
 
+/* ABOUT */
+.about p {
+  max-width: 800px;
+  line-height: 1.8;
+  color: #cbd5f5;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project {
+  background: #111827;
+  padding: 25px;
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+}
+
+.project h3 {
+  color: #3b82f6;
+  margin-bottom: 10px;
+}
+
+.project p {
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+/* CONTACT */
+.contact-box {
+  background: #111827;
+  padding: 40px;
+  border-radius: 18px;
+  max-width: 600px;
+}
+
+.contact-box p {
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
 footer {
-    margin-top: 25px;
-    font-size: 14px;
-    color: #9ca3af;
+  text-align: center;
+  padding: 30px;
+  color: #9ca3af;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
 }
 </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="profile.jpg" alt="Enis Begu" class="profile-img">
 
-        <div class="content">
-            <h1>Enis Begu</h1>
-            <h2>Web Developer · 16 years old</h2>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <img src="profile.jpg" class="profile-img" alt="Enis Begu">
+      <div>
+        <h1>Enis Begu</h1>
+        <h2>Web Developer · 16 years old</h2>
+        <p>
+          I’m a young web developer with real experience building functional websites.
+          I created <strong>galdimi.com</strong> and focus on clean, modern, and professional design.
+        </p>
 
-            <p>
-                I’m a young and motivated web developer with real-world experience.
-                I built <strong>galdimi.com</strong> and focus on creating clean,
-                modern, and functional websites.
-            </p>
+        <div class="skills">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">Java</div>
+          <div class="skill">WordPress</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <p>
-                I work with both custom code and CMS platforms and I’m constantly
-                improving my skills.
-            </p>
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-sub">Who I am and what I do</p>
 
-            <div class="skills">
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">Java</div>
-                <div class="skill">WordPress</div>
-            </div>
+    <p>
+      I started learning web development at a young age and quickly moved from small
+      projects to real websites used by real people. I enjoy building websites from scratch,
+      improving performance, and making designs that look professional and modern.
+    </p>
+  </div>
+</section>
 
-            <p><strong>Email:</strong> beguenis\2gmail.com</p>
+<!-- PROJECTS -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Some of my real work</p>
 
-            <div class="links">
-                <a href="https://galdimi.com" target="_blank">Galdimi.com</a>
-                <a hr
+    <div class="projects-grid">
+      <div class="project">
+        <h3>Galdimi.com</h3>
+        <p>
+          A full website built for a real business. Includes product pages,
+          clean UI, and responsive design.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>
+          This portfolio website built with HTML and CSS,
+          focused on clean design and performance.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Future Projects</h3>
+        <p>
+          More advanced projects coming soon as I continue improving my skills.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">Let’s work together</p>
+
+    <div class="contact-box">
+      <p><strong>Email:</strong> beguenis@gmail.com</p>
+      <p><strong>Website:</strong> galdimi.com</p>
+      <p><strong>GitHub:</strong> github.com/yourusername</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Enis Begu
+</footer>
+
+</body>
+</html>
+
