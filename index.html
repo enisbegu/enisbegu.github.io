@@ -2,30 +2,47 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Enis Begu | Portfolio</title>
+<title>Enis Begu – Web Developer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+:root {
+  --bg-main: #0b0f1a;
+  --bg-section: #111827;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --accent: #2563eb;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
 }
 
 body {
-  background: linear-gradient(180deg, #020617, #0f172a);
-  color: #e5e7eb;
+  background: linear-gradient(180deg, #020617, var(--bg-main));
+  color: var(--text-main);
 }
 
 /* GLOBAL */
-section {
-  padding: 80px 20px;
-}
-
 .container {
   max-width: 1100px;
   margin: auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 100px 0;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.8;
 }
 
 /* HERO */
@@ -36,12 +53,13 @@ section {
 }
 
 .hero-card {
-  background: #111827;
-  border-radius: 22px;
-  padding: 50px;
-  display: flex;
-  gap: 40px;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 50px;
+  background: var(--bg-section);
+  padding: 60px;
+  border-radius: 24px;
+  box-shadow: 0 50px 120px rgba(0,0,0,0.7);
   animation: fadeUp 1s ease;
 }
 
@@ -51,115 +69,116 @@ section {
 }
 
 .profile-img {
-  width: 230px;
-  height: 230px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #3b82f6;
+  border: 3px solid var(--accent);
 }
 
 .hero h1 {
-  font-size: 38px;
+  font-size: 42px;
 }
 
 .hero h2 {
-  color: #3b82f6;
-  font-size: 18px;
-  margin: 10px 0 20px;
+  margin: 12px 0 24px;
+  color: var(--accent);
+  font-weight: 500;
 }
 
 .hero p {
-  color: #cbd5f5;
-  line-height: 1.7;
+  max-width: 600px;
+  color: var(--text-muted);
 }
 
 .skills {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
 .skill {
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 999px;
-  background: rgba(59,130,246,0.15);
-  color: #3b82f6;
+  background: rgba(37,99,235,0.12);
+  color: var(--accent);
   font-weight: 600;
   font-size: 14px;
 }
 
 /* SECTION TITLES */
 .section-title {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.section-sub {
-  color: #94a3b8;
-  margin-bottom: 40px;
+.section-desc {
+  color: var(--text-muted);
+  margin-bottom: 60px;
 }
 
 /* ABOUT */
 .about p {
   max-width: 800px;
-  line-height: 1.8;
-  color: #cbd5f5;
+  color: var(--text-muted);
 }
 
 /* PROJECTS */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
 }
 
 .project {
-  background: #111827;
-  padding: 25px;
-  border-radius: 18px;
-  transition: transform 0.3s ease;
+  background: var(--bg-section);
+  padding: 35px;
+  border-radius: 20px;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .project:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 .project h3 {
-  color: #3b82f6;
-  margin-bottom: 10px;
+  color: var(--accent);
+  margin-bottom: 14px;
 }
 
 .project p {
-  color: #cbd5f5;
-  line-height: 1.6;
+  color: var(--text-muted);
 }
 
 /* CONTACT */
 .contact-box {
-  background: #111827;
-  padding: 40px;
-  border-radius: 18px;
+  background: var(--bg-section);
+  padding: 45px;
+  border-radius: 20px;
   max-width: 600px;
 }
 
 .contact-box p {
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+  color: var(--text-muted);
 }
 
 /* FOOTER */
 footer {
+  padding: 40px 0;
   text-align: center;
-  padding: 30px;
-  color: #9ca3af;
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero-card {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
-    align-items: center;
+    justify-items: center;
   }
 }
 </style>
@@ -171,13 +190,16 @@ footer {
 <section class="hero">
   <div class="container">
     <div class="hero-card">
-      <img src="profile.jpg" class="profile-img" alt="Enis Begu">
+      <img src="https://mail.google.com/mail/u/0?ui=2&ik=b4eee68b40&attid=0.1&permmsgid=msg-a:r-8469457876052400913&th=19bea703b843bba4&view=fimg&fur=ip&permmsgid=msg-a:r-8469457876052400913&sz=s0-l75-ft&attbid=ANGjdJ_v5IM7rxhYCE4IVj_Sg9QyLl13CpX9BCCs2l53IR9kVF0M6Y0F7X5nKs5ez2F-HEm8vEa61-0qAaqyc0fXEt2sUhB_m8TZELBDEiXaKtK8Z6w3xn-WC4dj7dE&disp=emb&realattid=ii_19bea70317b28965bf21&zw" class="profile-img" alt="Enis Begu">
+
       <div>
         <h1>Enis Begu</h1>
         <h2>Web Developer · 16 years old</h2>
+
         <p>
-          I’m a young web developer with real experience building functional websites.
-          I created <strong>galdimi.com</strong> and focus on clean, modern, and professional design.
+          I’m a motivated web developer with real-world experience building and managing
+          production websites. I created <strong>galdimi.com</strong> and focus on clean,
+          modern, and scalable web solutions.
         </p>
 
         <div class="skills">
@@ -195,12 +217,13 @@ footer {
 <section class="about">
   <div class="container">
     <h2 class="section-title">About Me</h2>
-    <p class="section-sub">Who I am and what I do</p>
+    <p class="section-desc">Background & mindset</p>
 
     <p>
-      I started learning web development at a young age and quickly moved from small
-      projects to real websites used by real people. I enjoy building websites from scratch,
-      improving performance, and making designs that look professional and modern.
+      I started web development early and quickly moved from learning fundamentals
+      to building real websites used by real users. I enjoy writing clean code,
+      structuring layouts professionally, and continuously improving performance
+      and usability.
     </p>
   </div>
 </section>
@@ -209,29 +232,31 @@ footer {
 <section>
   <div class="container">
     <h2 class="section-title">Projects</h2>
-    <p class="section-sub">Some of my real work</p>
+    <p class="section-desc">Selected work</p>
 
     <div class="projects-grid">
       <div class="project">
         <h3>Galdimi.com</h3>
         <p>
-          A full website built for a real business. Includes product pages,
-          clean UI, and responsive design.
+          A production website built for a real business.
+          Includes product pages, responsive layout,
+          and clean UI structure.
         </p>
       </div>
 
       <div class="project">
-        <h3>Portfolio Website</h3>
+        <h3>Personal Portfolio</h3>
         <p>
-          This portfolio website built with HTML and CSS,
-          focused on clean design and performance.
+          A custom-built portfolio using pure HTML and CSS,
+          designed with a professional developer layout (this site).
         </p>
       </div>
 
       <div class="project">
-        <h3>Future Projects</h3>
+        <h3>Upcoming Projects</h3>
         <p>
-          More advanced projects coming soon as I continue improving my skills.
+          Advanced projects focusing on performance,
+          UI/UX, and modern web practices.
         </p>
       </div>
     </div>
@@ -242,7 +267,7 @@ footer {
 <section>
   <div class="container">
     <h2 class="section-title">Contact</h2>
-    <p class="section-sub">Let’s work together</p>
+    <p class="section-desc">Get in touch</p>
 
     <div class="contact-box">
       <p><strong>Email:</strong> beguenis\2gmail.com</p>
