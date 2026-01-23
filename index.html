@@ -2,193 +2,169 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <!-- SEO -->
-    <title>Enis Begu | Software Programmer & Web Developer</title>
-    <meta name="description" content="Enis Begu is a young software programmer and web developer. Creator of galdimi.com. View portfolio, skills, and projects.">
-    <meta name="keywords" content="Enis Begu, software programmer, web developer, portfolio, galdimi, HTML, CSS, JavaScript">
-    <meta name="author" content="Enis Begu">
+    <title>Enis Begu | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        :root {
-            --bg: #f8fafc;
-            --primary: #1e293b;
-            --secondary: #475569;
-            --accent: #2563eb;
-            --card: #ffffff;
-            --border: #e2e8f0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg);
-            color: var(--primary);
-            line-height: 1.6;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
         }
 
-        header {
-            background-color: var(--card);
-            border-bottom: 1px solid var(--border);
-            padding: 60px 20px;
-            text-align: center;
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
 
-        header h1 {
-            margin: 15px 0 5px;
-            font-size: 40px;
+        .container {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 95%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            animation: slideUp 1.2s ease forwards;
         }
 
-        header p {
-            color: var(--secondary);
-            font-size: 18px;
-            margin: 0;
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+            }
+            to {
+                transform: translateY(0);
+            }
         }
 
-        .profile-photo {
-            width: 160px;
-            height: 160px;
+        .photo {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo img {
+            width: 200px;
+            height: 200px;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid var(--accent);
+            border: 4px solid #00d4ff;
         }
 
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 50px 20px;
+        .content {
+            flex: 2;
+            min-width: 250px;
         }
 
-        section {
-            margin-bottom: 60px;
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 18px;
+            color: #00d4ff;
             margin-bottom: 20px;
-            border-left: 4px solid var(--accent);
-            padding-left: 10px;
         }
 
-        .card {
-            background-color: var(--card);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        ul {
-            padding-left: 20px;
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
         }
 
-        ul li {
-            margin-bottom: 8px;
+        .skill {
+            background: #00d4ff;
+            color: black;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
         }
 
-        a {
-            color: var(--accent);
+        .links a {
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 10px;
+            color: #00d4ff;
             text-decoration: none;
+            font-weight: bold;
         }
 
-        a:hover {
+        .links a:hover {
             text-decoration: underline;
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid var(--border);
-            background-color: var(--card);
-            color: var(--secondary);
+            margin-top: 20px;
             font-size: 14px;
+            opacity: 0.8;
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="photo">
+            <!-- Replace profile.jpg with your own photo -->
+            <img src="profile.jpg" alt="Enis Begu">
+        </div>
 
-<header>
-    <!-- PHOTO LINK (replace with your own image URL if you want) -->
-    <img 
-        src="C:\Users\Nxenesit\Downloads\IMG_0597.jpeg" 
-        alt="Photo of Enis Begu" 
-        class="profile-photo"
-    >
+        <div class="content">
+            <h1>Enis Begu</h1>
+            <h2>16-year-old Web Developer</h2>
 
-    <h1>Enis Begu</h1>
-    <p>Software Programmer & Web Developer</p>
-</header>
-
-<main>
-
-    <section>
-        <h2>About Me</h2>
-        <div class="card">
             <p>
-                My name is <strong>Enis Begu</strong>. I am a 16-year-old software programmer with a strong
-                interest in web development and modern technologies. I enjoy building real-world
-                projects, writing clean code, and continuously improving my skills.
+                I’m a passionate young developer with experience in building real websites.
+                I created <strong>galdimi.com</strong> and I enjoy working on clean,
+                modern, and functional web projects.
             </p>
-        </div>
-    </section>
 
-    <section>
-        <h2>Technical Skills</h2>
-        <div class="card">
-            <ul>
-                <li>HTML5 – Semantic and accessible markup</li>
-                <li>CSS3 – Responsive layouts and modern styling</li>
-                <li>JavaScript – Basics and DOM manipulation</li>
-                <li>Git & GitHub – Version control</li>
-                <li>Problem solving and logical thinking</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Projects</h2>
-
-        <div class="card">
-            <p><strong>Galdimi.com</strong></p>
             <p>
-                A live website fully designed and developed by me. This project demonstrates my ability
-                to build, deploy, and maintain a real-world web application with a focus on clean design,
-                usability, and performance.
+                I work with both front-end and CMS platforms and I’m always learning
+                new technologies to improve my skills.
             </p>
-            <p>
-                Website:
-                <a href="https://galdimi.com" target="_blank" rel="noopener">
-                    https://galdimi.com
-                </a>
-            </p>
+
+            <div class="skills">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">Java</div>
+                <div class="skill">WordPress</div>
+            </div>
+
+            <p><strong>Email:</strong> beguenis\2gmail.com</p>
+
+            <div class="links">
+                <a href="https://galdimi.com" target="_blank">🌐 Galdimi.com</a>
+                <a href="https://github.com/" target="_blank">💻 GitHub</a>
+            </div>
+
+            <footer>
+                © 2026 Enis Begu
+            </footer>
         </div>
-
-        <br>
-
-        <div class="card">
-            <p><strong>Personal Portfolio Website</strong></p>
-            <p>
-                A professional portfolio website built using HTML and CSS, hosted on GitHub Pages and
-                optimized for search engines.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>Contact</h2>
-        <div class="card">
-            <p>Email: <a href="mailto:beguenis@gmail.com">beguenis@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    © 2026 Enis Begu. All rights reserved.
-</footer>
-
+    </div>
 </body>
 </html>
-
