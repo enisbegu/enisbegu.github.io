@@ -105,6 +105,12 @@ p {
   color: var(--accent);
   font-weight: 600;
   font-size: 14px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  background: rgba(37,99,235,0.2);
 }
 
 /* SECTION TITLES */
@@ -135,7 +141,7 @@ p {
   background: var(--bg-section);
   padding: 35px;
   border-radius: 20px;
-  transition: transform .3s ease, box-shadow .3s ease;
+  transition: transform .3s ease, box-shadow .3s ease, opacity .6s ease;
 }
 
 .project:hover {
@@ -181,15 +187,27 @@ footer {
     justify-items: center;
   }
 }
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 
 <body>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero reveal">
   <div class="container">
-    <div class="hero-card">
+    <div class="hero-card reveal">
       <img src="https://mail.google.com/mail/u/0?ui=2&ik=b4eee68b40&attid=0.1&permmsgid=msg-a:r-8469457876052400913&th=19bea703b843bba4&view=fimg&fur=ip&permmsgid=msg-a:r-8469457876052400913&sz=s0-l75-ft&attbid=ANGjdJ8IcTril4WdDopUN9herw_R0kgF08AN6qOcjifg_o7V5gh-3yqG9vSqDH1XQF9dmokau463TDCQ7QXrddH1WuQMW7MJBM7b0MxZmFmGhkdhm02qcPak5X1Y9P4&disp=emb&realattid=ii_19bea70317b28965bf21&zw" class="profile-img" alt="Enis Begu">
 
       <div>
@@ -214,7 +232,7 @@ footer {
 </section>
 
 <!-- ABOUT -->
-<section class="about">
+<section class="about reveal">
   <div class="container">
     <h2 class="section-title">About Me</h2>
     <p class="section-desc">Background & mindset</p>
@@ -229,13 +247,13 @@ footer {
 </section>
 
 <!-- PROJECTS -->
-<section>
+<section class="reveal">
   <div class="container">
     <h2 class="section-title">Projects</h2>
     <p class="section-desc">Selected work</p>
 
     <div class="projects-grid">
-      <div class="project">
+      <div class="project reveal">
         <h3>Galdimi.com</h3>
         <p>
           A production website built for a real business.
@@ -244,7 +262,7 @@ footer {
         </p>
       </div>
 
-      <div class="project">
+      <div class="project reveal">
         <h3>Personal Portfolio</h3>
         <p>
           A custom-built portfolio using pure HTML and CSS,
@@ -252,7 +270,7 @@ footer {
         </p>
       </div>
 
-      <div class="project">
+      <div class="project reveal">
         <h3>Upcoming Projects</h3>
         <p>
           Advanced projects focusing on performance,
@@ -264,12 +282,12 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section>
+<section class="reveal">
   <div class="container">
     <h2 class="section-title">Contact</h2>
     <p class="section-desc">Get in touch</p>
 
-    <div class="contact-box">
+    <div class="contact-box reveal">
       <p><strong>Email:</strong> beguenis@gmail.com</p>
       <p><strong>Website:</strong> galdimi.com</p> 
     </div>
@@ -280,9 +298,24 @@ footer {
   © 2026 Enis Begu
 </footer>
 
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
-
-
 
 
