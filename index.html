@@ -21,16 +21,11 @@
   font-family: Inter, system-ui, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: linear-gradient(180deg, #020617, var(--bg-main));
   color: var(--text-main);
 }
 
-/* GLOBAL */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -39,32 +34,10 @@ body {
 
 section {
   padding: 100px 0;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: sectionFade 1s ease forwards;
 }
 
-section:nth-of-type(1) { animation-delay: .2s; }
-section:nth-of-type(2) { animation-delay: .4s; }
-section:nth-of-type(3) { animation-delay: .6s; }
-section:nth-of-type(4) { animation-delay: .8s; }
+h1 { font-size: 42px; }
 
-@keyframes sectionFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-h1, h2, h3 {
-  font-weight: 700;
-}
-
-p {
-  line-height: 1.8;
-}
-
-/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -79,29 +52,6 @@ p {
   padding: 60px;
   border-radius: 24px;
   box-shadow: 0 50px 120px rgba(0,0,0,0.7);
-  position: relative;
-  overflow: hidden;
-  animation: fadeUp 1s ease;
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%);
-  top: -150px;
-  right: -150px;
-}
-
-.hero-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .profile-img {
@@ -110,16 +60,9 @@ p {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent);
-  transition: transform .4s ease, box-shadow .4s ease;
-}
-
-.profile-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(37,99,235,0.6);
 }
 
 .hero h1 {
-  font-size: 42px;
   background: linear-gradient(90deg, #2563eb, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -128,12 +71,11 @@ p {
 .hero h2 {
   margin: 12px 0 24px;
   color: var(--accent);
-  font-weight: 500;
 }
 
 .hero p {
-  max-width: 600px;
   color: var(--text-muted);
+  max-width: 600px;
 }
 
 .skills {
@@ -150,16 +92,8 @@ p {
   color: var(--accent);
   font-weight: 600;
   font-size: 14px;
-  transition: all .3s ease;
 }
 
-.skill:hover {
-  background: var(--accent);
-  color: white;
-  transform: translateY(-3px);
-}
-
-/* SECTION TITLES */
 .section-title {
   font-size: 36px;
   margin-bottom: 10px;
@@ -170,13 +104,6 @@ p {
   margin-bottom: 60px;
 }
 
-/* ABOUT */
-.about p {
-  max-width: 800px;
-  color: var(--text-muted);
-}
-
-/* PROJECTS */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -187,14 +114,6 @@ p {
   background: var(--bg-section);
   padding: 35px;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: transform .3s ease, box-shadow .3s ease, border .3s ease;
-}
-
-.project:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  border: 1px solid rgba(37,99,235,0.4);
 }
 
 .project h3 {
@@ -206,21 +125,48 @@ p {
   color: var(--text-muted);
 }
 
-/* CONTACT */
+/* CONTACT FORM */
 .contact-box {
   background: var(--bg-section);
   padding: 45px;
   border-radius: 20px;
   max-width: 600px;
-  border: 1px solid rgba(255,255,255,0.05);
 }
 
-.contact-box p {
-  margin-bottom: 14px;
-  color: var(--text-muted);
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-/* FOOTER */
+input, textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #0f172a;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid var(--accent);
+}
+
+button {
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
 footer {
   padding: 40px 0;
   text-align: center;
@@ -228,12 +174,10 @@ footer {
   font-size: 14px;
 }
 
-/* MOBILE */
 @media (max-width: 900px) {
   .hero-card {
     grid-template-columns: 1fr;
     text-align: center;
-    justify-items: center;
   }
 }
 </style>
@@ -241,7 +185,6 @@ footer {
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-card">
@@ -250,11 +193,8 @@ footer {
       <div>
         <h1>Enis Begu</h1>
         <h2>Web Developer · 16 years old</h2>
-
         <p>
-          I’m a motivated web developer with real-world experience building and managing
-          production websites. I created <strong>galdimi.com</strong> and focus on clean,
-          modern, and scalable web solutions.
+          I build modern, responsive and scalable websites.
         </p>
 
         <div class="skills">
@@ -268,66 +208,23 @@ footer {
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about">
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-desc">Background & mindset</p>
-
-    <p>
-      I started web development early and quickly moved from learning fundamentals
-      to building real websites used by real users. I enjoy writing clean code,
-      structuring layouts professionally, and continuously improving performance
-      and usability.
-    </p>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Projects</h2>
-    <p class="section-desc">Selected work</p>
-
-    <div class="projects-grid">
-      <div class="project">
-        <h3>Galdimi.com</h3>
-        <p>
-          A production website built for a real business.
-          Includes product pages, responsive layout,
-          and clean UI structure.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>Personal Portfolio</h3>
-        <p>
-          A custom-built portfolio using pure HTML and CSS,
-          designed with a professional developer layout.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>Upcoming Projects</h3>
-        <p>
-          Advanced projects focusing on performance,
-          UI/UX, and modern web practices.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section>
   <div class="container">
     <h2 class="section-title">Contact</h2>
-    <p class="section-desc">Get in touch</p>
+    <p class="section-desc">Send me a message</p>
 
     <div class="contact-box">
-      <p><strong>Email:</strong> beguenis@gmail.com</p>
-      <p><strong>Website:</strong> galdimi.com</p>
-      <p><strong>GitHub:</strong> github.com/yourusername</p>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        
+        <input type="text" name="name" placeholder="Your Name" required>
+        
+        <input type="email" name="email" placeholder="Your Email" required>
+        
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        
+        <button type="submit">Send Message</button>
+
+      </form>
     </div>
   </div>
 </section>
@@ -338,3 +235,4 @@ footer {
 
 </body>
 </html>
+
