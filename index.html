@@ -21,6 +21,10 @@
   font-family: Inter, system-ui, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(180deg, #020617, var(--bg-main));
   color: var(--text-main);
@@ -35,6 +39,21 @@ body {
 
 section {
   padding: 100px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: sectionFade 1s ease forwards;
+}
+
+section:nth-of-type(1) { animation-delay: .2s; }
+section:nth-of-type(2) { animation-delay: .4s; }
+section:nth-of-type(3) { animation-delay: .6s; }
+section:nth-of-type(4) { animation-delay: .8s; }
+
+@keyframes sectionFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1, h2, h3 {
@@ -60,7 +79,24 @@ p {
   padding: 60px;
   border-radius: 24px;
   box-shadow: 0 50px 120px rgba(0,0,0,0.7);
+  position: relative;
+  overflow: hidden;
   animation: fadeUp 1s ease;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%);
+  top: -150px;
+  right: -150px;
+}
+
+.hero-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeUp {
@@ -74,10 +110,19 @@ p {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(37,99,235,0.6);
 }
 
 .hero h1 {
   font-size: 42px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero h2 {
@@ -105,6 +150,13 @@ p {
   color: var(--accent);
   font-weight: 600;
   font-size: 14px;
+  transition: all .3s ease;
+}
+
+.skill:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
 }
 
 /* SECTION TITLES */
@@ -135,12 +187,14 @@ p {
   background: var(--bg-section);
   padding: 35px;
   border-radius: 20px;
-  transition: transform .3s ease, box-shadow .3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform .3s ease, box-shadow .3s ease, border .3s ease;
 }
 
 .project:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(37,99,235,0.4);
 }
 
 .project h3 {
@@ -158,6 +212,7 @@ p {
   padding: 45px;
   border-radius: 20px;
   max-width: 600px;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .contact-box p {
@@ -190,8 +245,7 @@ footer {
 <section class="hero">
   <div class="container">
     <div class="hero-card">
-<img src="https://mail.google.com/mail/u/0?ui=2&ik=b4eee68b40&attid=0.1&permmsgid=msg-a:r-8469457876052400913&th=19bea703b843bba4&view=fimg&fur=ip&permmsgid=msg-a:r-8469457876052400913&sz=s0-l75-ft&attbid=ANGjdJ8dWMKPEaJaxyJHCS974DHHIDJJji_ZYF_Bka7FZR1UhX1KAx0tRboxcbGLiB5Dg2SAIUivrnZ_0oV0ZWzDswVS2ST_OR-e8FmsDEVw09Kf7_kH8p6CxlBg8e0&disp=emb&realattid=ii_19bea70317b28965bf21&zw" alt="Enis Begu" class="profile-img">
-
+      <img src="your-image.jpg" alt="Enis Begu" class="profile-img">
 
       <div>
         <h1>Enis Begu</h1>
@@ -249,7 +303,7 @@ footer {
         <h3>Personal Portfolio</h3>
         <p>
           A custom-built portfolio using pure HTML and CSS,
-          designed with a professional developer layout (this site).
+          designed with a professional developer layout.
         </p>
       </div>
 
@@ -284,4 +338,3 @@ footer {
 
 </body>
 </html>
-
